@@ -1,3 +1,7 @@
 node_modules
 dist
+.agents
+.claude
+.windsurf
 .env
+/src/generated/prisma
