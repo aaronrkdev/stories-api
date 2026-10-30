@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import { prisma } from "../configs/db";
-import { RegistrationBody } from "../validators/auth.validator";
+import { RegistrationBody } from "../validators/credential.validator";
 import { Request, Response } from "express";
 import { generateToken } from "../lib/jwt";
 
