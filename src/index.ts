@@ -2,6 +2,7 @@ import "dotenv/config";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { connectDB, disconnectDB } from "./configs/db";
+import authRoutes from "./routes/auth.route";
 
 connectDB();
 const app = express();
@@ -9,6 +10,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//routes
+app.use("/user", authRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("API des histoires en marche !");
